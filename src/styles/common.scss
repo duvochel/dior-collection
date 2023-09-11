@@ -1,0 +1,39 @@
+.container-flex-v {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-center {
+  align-self: center;
+  margin-bottom: 8.37rem;
+}
+
+.title-multi {
+  margin-left: 2.08rem;
+  margin-bottom: 6.75rem;
+  color: #000;
+
+  span {
+    display: block;
+    &:first-child {
+      color: #868686;
+      font-size: 2rem;
+    }
+    &:last-child {
+      margin-left: 5.06rem;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.input-text {
+  font-size: 0.875rem;
+  font-size: 0.875rem;
+  width: 14.375rem;
+  margin-left: 5.88rem;
+
+  input {
+    border: none;
+    background-color: white;
+  }
+}

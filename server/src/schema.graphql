@@ -1,0 +1,46 @@
+type Query {
+  catalog: Catalog!
+  product(productId: ID!): Product!
+}
+
+type Catalog {
+  id: ID!
+  products: [Product!]
+  count: Int!
+}
+
+type Product {
+  id: ID!
+  name: String!
+  description: String!
+  price: String!
+  image: String!
+}
+
+type Mutation {
+  login(email: String!, password: String!): AuthPayload
+}
+
+type AuthPayload {
+  token: String
+  user: User
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+}
+
+input LinkOrderByInput {
+  description: Sort
+  name: Sort
+  price: Sort
+}
+
+enum Sort {
+  asc
+  desc
+}
+
+scalar DateTime
