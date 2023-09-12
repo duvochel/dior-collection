@@ -6,6 +6,23 @@
   .bg-image {
     align-self: center;
     position: absolute;
-    bottom: 0;
+    bottom: -6rem;
+
+    img {
+      transform: scaleX(-1);
+      width: 36.5625rem;
+      height: 50.875rem;
+    }
+  }
+
+  .btn-login {
+    margin-left: 5rem;
+    width: 16.125rem;
+    height: 4rem;
+    border: none;
+    border-radius: 0.625rem;
+    background: linear-gradient(180deg, #1e1e1e 0%, #424242 100%);
+    color: #fff;
+    font-weight: 200;
   }
 }
