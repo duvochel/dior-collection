@@ -14,7 +14,7 @@ const Header = () => {
           <img alt="logo-dior" src={diorLogo} />
         </div>
       </Link>
-      <Link to="/cart">
+      <Link to="/login">
         <div className="cart-icon">
           <img alt="shopping-cart" src={cartIcon} />
         </div>

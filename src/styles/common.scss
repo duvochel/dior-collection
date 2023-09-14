@@ -5,9 +5,18 @@
   flex-direction: column;
 }
 
+.flex-center {
+  align-items: center;
+}
+
 .logo-center {
   align-self: center;
   margin-bottom: 8.37rem;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
 }
 
 .title-multi {
@@ -29,5 +38,5 @@
 }
 
 .error-field {
-  color: #F00;
+  color: #f00;
 }

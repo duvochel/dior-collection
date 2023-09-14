@@ -14,7 +14,13 @@ type Product {
   name: String!
   description: String!
   price: String!
-  image: String!
+  image: Image!
+}
+
+type Image {
+  desktop: String!
+  tablet: String!
+  mobile: String!
 }
 
 type Mutation {
