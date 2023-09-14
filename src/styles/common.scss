@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 .container-flex-v {
   display: flex;
   flex-direction: column;
@@ -16,7 +18,7 @@
   span {
     display: block;
     &:first-child {
-      color: #868686;
+      color: $base-color;
       font-size: 2rem;
     }
     &:last-child {
@@ -26,15 +28,6 @@
   }
 }
 
-.input-text {
-  font-size: 0.875rem;
-  font-size: 0.875rem;
-  width: 14.375rem;
-  margin-left: 5.88rem;
-  margin-bottom: 4.69rem;
-
-  input {
-    border: none;
-    background-color: white;
-  }
+.error-field {
+  color: #F00;
 }

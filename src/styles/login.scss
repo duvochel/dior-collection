@@ -4,9 +4,9 @@
   padding-top: 3.06rem;
 
   .bg-image {
-    align-self: center;
-    position: absolute;
-    bottom: -6rem;
+    z-index: -1;
+    margin-top: 4.69rem;
+    transform: translateX(-4rem);
 
     img {
       transform: scaleX(-1);
@@ -15,14 +15,36 @@
     }
   }
 
+  .input-text {
+    font-size: 0.875rem;
+    width: 14.375rem;
+    margin-left: 5.88rem;
+    margin-bottom: 4.69rem;
+    gap: 1.94rem;
+
+    input {
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: 0.08rem solid #afafaf;
+      background-color: white;
+
+      &:first-child {
+        margin-bottom: 1.94rem;
+      }
+    }
+
+  }
+
   .btn-login {
     margin-left: 5rem;
     width: 16.125rem;
     height: 4rem;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 200;
     border: none;
     border-radius: 0.625rem;
     background: linear-gradient(180deg, #1e1e1e 0%, #424242 100%);
-    color: #fff;
-    font-weight: 200;
   }
 }

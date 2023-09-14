@@ -6,6 +6,7 @@ import { AUTH_TOKEN, IMG_EIFFEL } from "../constants";
 import diorLogo from "../icons/diorLogo.svg";
 
 import "../styles/login.scss";
+import classNames from "classnames";
 
 const LOGIN_MUTATION = gql`
   mutation LoginMutation($email: String!, $password: String!) {
@@ -44,7 +45,7 @@ const Login = () => {
         <span>WELCOME</span>
         <span>いらっしゃいませ</span>
       </div>
-      <div className="container-flex-v input-text">
+      <div className={classNames('container-flex-v', 'input-text', { 'error-field' : Boolean(error) })}>
         {error && <p>{error.message}</p>}
         <div className="container-flex-v">
           <label htmlFor="email">LOGIN</label>
