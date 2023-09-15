@@ -1,6 +1,6 @@
 import "../styles/filters.scss";
 
-// TODO : remove sort icon on mobile
+// TODO : remove sort icon on mobile and create component for desktop.
 export default function Filters() {
   return (
     <div className="filters-container">
