@@ -15,7 +15,7 @@ const Header = () => {
         </div>
       </Link>
       <Link to="/login">
-        <div className="cart-icon">
+        <div className="cart-icon image-box">
           <img alt="shopping-cart" src={cartIcon} />
         </div>
       </Link>

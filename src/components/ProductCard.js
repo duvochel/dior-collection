@@ -3,7 +3,6 @@ import "../styles/productCard.scss";
 
 export default function ProductCard({ product }) {
   const { width } = useWindowSize();
-  console.log({ product });
 
   let imageUrl;
   if (width > 834) {

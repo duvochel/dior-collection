@@ -2,10 +2,10 @@ import { Routes, Route, useLocation } from "react-router-dom";
 
 import Header from "./Header";
 import Login from "./Login";
-import Home from "./Home";
 import Product from "./Product";
 
 import "../styles/app.scss";
+import ProductList from "./ProductList";
 
 export default function App() {
   const location = useLocation();
@@ -16,7 +16,7 @@ export default function App() {
       {showHeader && <Header />}
       <div className="app-content">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<ProductList />} />
           <Route path="/product/:id" element={<Product />} />
           <Route path="/login" element={<Login />} />
         </Routes>
