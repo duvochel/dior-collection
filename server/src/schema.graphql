@@ -21,6 +21,7 @@ type Image {
   desktop: String!
   tablet: String!
   mobile: String!
+  mini: String!
 }
 
 type Mutation {

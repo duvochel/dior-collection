@@ -1,12 +1,10 @@
-import ProductCard from "./ProductCard";
-import "../styles/caroussel.scss";
+import CarousselMobile from "./CarousselMobile";
+import CarousselDesktop from "./CarousselDesktop";
 
-export default function Caroussel({ products }) {
-  return (
-    <div className="caroussel">
-      {products.map((product) => {
-        return <ProductCard key={product.id} product={product} />;
-      })}
-    </div>
-  );
+export default function Caroussel({ products, isMobile }) {
+  if (isMobile) {
+    return <CarousselMobile products={products} />;
+  } else {
+    return <CarousselDesktop products={products} />;
+  }
 }

@@ -1,4 +1,11 @@
 @mixin flex-v {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin img-box {
+  img {
+    width: 100%;
+    height: 100%;
   }
+}

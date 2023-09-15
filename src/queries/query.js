@@ -13,6 +13,7 @@ export const CATALOG_QUERY = gql`
           desktop
           tablet
           mobile
+          mini
         }
       }
       count
