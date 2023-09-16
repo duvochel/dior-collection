@@ -1,5 +1,6 @@
 @import "../styles/common.scss";
 @import "./variables.scss";
+@import "./mixins.scss";
 
 .card {
   position: relative;
@@ -15,12 +16,19 @@
     height: 34.5625rem;
 
     &:hover {
-      width: 50.8125rem;
-      height: 34.4375rem;
+      // width: 50.8125rem;
+      // height: 34.4375rem;
+      transform: scale(0.99);
 
       .product-image {
-        // width: 40.72475rem;
-        // height: 39.91763rem;
+        transform: scale(0.99);
+      }
+
+      .product-name {
+        transform: scale(0.99);
+      }
+
+      .product-price {
         transform: scale(0.99);
       }
     }
@@ -41,44 +49,47 @@
       font-size: 1rem;
     }
   }
+}
 
-  &-name {
-    color: #000;
+.product-price {
+  color: #000;
+  font-weight: 100;
+  margin: 0.82rem 0.5rem 1rem 0;
+
+  @media (min-width: $desktop) {
+    margin: 1.16rem 2.62rem 2rem 0;
     font-size: 1.25rem;
-    font-weight: 100;
-    margin: 2.21rem 0.5rem 0 0;
-
-    @media (min-width: $desktop) {
-      margin: 10.12rem 1.5rem 0 0;
-      font-size: 2rem;
-    }
+    transition: 300ms ease;
   }
+}
 
-  &-price {
-    color: #000;
-    font-weight: 100;
-    margin: 0.82rem 0.5rem 1rem 0;
+.product-name {
+  color: #000;
+  font-size: 1.25rem;
+  font-weight: 100;
+  margin: 2.21rem 0.5rem 0 0;
 
-    @media (min-width: $desktop) {
-      margin: 1.16rem 2.62rem 2rem 0;
-      font-size: 1.25rem;
-    }
+  @media (min-width: $desktop) {
+    margin: 10.12rem 1.5rem 0 0;
+    font-size: 2rem;
+    transition: 300ms ease;
   }
 }
 
 .product-image {
   position: absolute;
   left: 0;
-  bottom: 0;
-  width: 14.40594rem;
-  height: 14.125rem;
+  bottom: -0.25rem;
   transition: 300ms ease;
-
-  @media (min-width: $desktop) {
-    width: 40.875rem;
-    height: 40.0625rem;
+  
+  @media (max-width: $mobile) {
+    width: 14.40594rem;
+    height: 14.125rem;
   }
 
+  @media (min-width: $desktop) {
+  }
+  
   img {
     width: 100%;
     height: 100%;

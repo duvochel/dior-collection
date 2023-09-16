@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useWindowSize, useHover } from "usehooks-ts";
 
 import { DESCRIPTION_BETA } from "../constants";
@@ -30,10 +30,10 @@ export default function ProductCard({ product }) {
           <span>{product.description}</span>
         )}
       </div>
-      <div className="card-name">
+      <div className="product-name">
         <span>{product.name}</span>
       </div>
-      <div className="card-price">
+      <div className="product-price">
         <span>{product.price}</span>
       </div>
     </div>

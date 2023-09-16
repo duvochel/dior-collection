@@ -4,10 +4,8 @@ import { useWindowSize } from "usehooks-ts";
 
 import { GET_PRODUCT } from "../queries/query";
 
-import "../styles/product.scss";
 
-
-
+// TODO : Remove
 export default function Product() {
   const { id } = useParams();
   const { width } = useWindowSize();

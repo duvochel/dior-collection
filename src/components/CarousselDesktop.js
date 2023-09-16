@@ -3,8 +3,6 @@ import { useState } from "react";
 import ProductCard from "./ProductCard";
 import ArrowButton from "./ArrowButton";
 
-import "../styles/carousselDesktop.scss";
-
 export default function CarousselDesktop({ products, isMobile }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   let nextIndex;
@@ -31,7 +29,7 @@ export default function CarousselDesktop({ products, isMobile }) {
   }
 
   return (
-    <div className="caroussel-desktop">
+    <>
       <ProductCard product={products[currentIndex]} />
       {nextIndex && (
         <ArrowButton
@@ -47,6 +45,6 @@ export default function CarousselDesktop({ products, isMobile }) {
           direction="left"
         />
       )}
-    </div>
+    </>
   );
 }

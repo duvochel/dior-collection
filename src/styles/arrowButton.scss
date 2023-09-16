@@ -21,8 +21,6 @@
 
   &:hover {
     opacity: 0.34;
-    // width: 4.6875rem;
-    // height: 9.875rem;
     transform: scale(1.2);
   }
 }
@@ -33,10 +31,11 @@
   right: 2.31rem;
 }
 
+// TODO : fix image men_shirt no repeat
 .product-mini-left {
   @include bgImage();
 
-  left: 2.31rem;
+  left: -4.69rem;
 }
 
 .arrow-right {

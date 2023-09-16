@@ -9,3 +9,11 @@
     height: 100%;
   }
 }
+
+@mixin scaleOnHover {
+  transition: 300ms ease;
+
+  &:hover {
+    transform: scale(0.99);
+  }
+}
