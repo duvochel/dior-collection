@@ -8,7 +8,7 @@ export default function ArrowButton({ imageUrl, direction, handleClick }) {
   const buttonStyle = classNames(`arrow-${direction}`);
   const imgStyle = classNames(`product-mini-${direction}`);
   const iconArrow = direction === "right" ? arrowRight : arrowLeft;
-  console.log({ direction });
+
   return (
     <>
       <div

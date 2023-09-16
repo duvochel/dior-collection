@@ -3,6 +3,7 @@ import { useQuery } from "@apollo/client";
 
 import Caroussel from "./Caroussel";
 import Filters from "./Filters";
+import AddToCartButton from "./AddToCartButton";
 
 import { CATALOG_QUERY } from "../queries/query";
 import { useDevice } from "../hooks/useDevice";
@@ -37,9 +38,7 @@ export default function ProductList() {
       {data && data.catalog?.products && (
         <Caroussel products={data.catalog.products} isMobile={isMobile} />
       )}
-      <div className="btn-img">
-        <img alt="btn-cart" src="/images/btn_cart.png" />
-      </div>
+      <AddToCartButton />
     </div>
   );
 }
