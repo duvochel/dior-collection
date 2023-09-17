@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useWindowSize, useHover } from "usehooks-ts";
 
 import { DESCRIPTION_BETA } from "../constants";

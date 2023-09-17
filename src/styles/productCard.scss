@@ -77,21 +77,15 @@
 }
 
 .product-image {
+  @include img-box;
+
   position: absolute;
   left: 0;
   bottom: -0.25rem;
   transition: 300ms ease;
   
-  @media (max-width: $mobile) {
+  @media (max-width: $tablet) {
     width: 14.40594rem;
     height: 14.125rem;
-  }
-
-  @media (min-width: $desktop) {
-  }
-  
-  img {
-    width: 100%;
-    height: 100%;
   }
 }

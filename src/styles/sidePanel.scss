@@ -1,0 +1,81 @@
+@import "../styles/mixins.scss";
+@import "../styles/variables.scss";
+
+.side-panel {
+  z-index: 1200;
+  position: fixed;
+  top: 0;
+  right: -24.375rem;
+  bottom: 0;
+  width: 24.375rem;
+  height: 100%;
+  background-image: url(../icons/sidePanel_bg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: right 0.3s ease-in-out;
+
+  @media (min-width: $tablet) {
+    background-image: url(../icons/sidePanel_bg-desktop.svg);
+    width: 46.28125rem;
+    right: -46.28125rem;
+  }
+
+  .close-btn {
+    @include img-box;
+
+    position: absolute;
+    top: 1.38rem;
+    left: 4.69rem;
+    background: none;
+    border: none;
+    width: 2.1875rem;
+    height: 2.1875rem;
+    cursor: pointer;
+
+    @media (min-width: $tablet) {
+      top: 3.19rem;
+      left: 10.84rem;
+      width: 2.4375rem;
+      height: 2.4375rem;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .cart {
+    position: absolute;
+    top: 1.13rem;
+    right: 0.62rem;
+    display: flex;
+
+    @media (min-width: $tablet) {
+      top: 2.81rem;
+      right: 2.44rem;
+    }
+
+    span {
+      align-self: flex-end;
+      color: #000;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .cart-icon {
+      @include img-box;
+
+      width: 2.25rem;
+      height: 2.25rem;
+
+      @media (min-width: $tablet) {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+  }
+}
+
+.show-panel {
+  right: 0;
+}
