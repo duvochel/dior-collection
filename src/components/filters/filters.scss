@@ -1,0 +1,43 @@
+@import "../../styles/common.scss";
+@import "../../styles/variables.scss";
+
+.filters-container {
+  display: flex;
+  position: relative;
+
+  @media (min-width: $large-screen) {
+    position: absolute;
+    top: 11rem;
+    right: 9.87rem;
+    width: 17.75rem;
+    height: 2.25rem;
+    padding: 0.0625rem 1.3125rem 0rem 0rem;
+    align-items: flex-start;
+    gap: 4.625rem;
+  }
+
+  @media (min-width: $tablet) and (max-width: $large-screen) {
+    align-self: end;
+    margin-right: 1.69rem;
+  }
+
+  .filter {
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: $tablet) {
+      &:first-child {
+        // TODO : 9rem on Figma
+        margin-right: 6rem;
+      }
+  }
+
+    @media (min-width: $tablet ) {
+      margin: 0;
+    }
+
+    .underlined {
+      border-bottom: 0.5px solid #020202;
+    }
+  }
+}

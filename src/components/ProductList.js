@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 
 import Caroussel from "./Caroussel";
-import Filters from "./Filters";
+import Filters from "./filters/Filters";
 import AddToCartButton from "./AddToCartButton";
 
 import { CATALOG_QUERY } from "../queries/query";
