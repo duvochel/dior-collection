@@ -1,7 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import Header from "./Header";
-import Login from "./Login";
+import LoginPage from "../pages/login/LoginPage";
 import Product from "./Product";
 
 import "../styles/app.scss";
@@ -18,7 +18,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<ProductList />} />
           <Route path="/product/:id" element={<Product />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </div>
     </>

@@ -1,12 +1,18 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import classNames from "classnames";
 import { useMutation, gql } from "@apollo/client";
 
-import { AUTH_TOKEN, IMG_EIFFEL } from "../constants";
-import diorLogo from "../icons/diorLogo.svg";
+import {
+  AUTH_TOKEN,
+  IMG_EIFFEL_DESKTOP,
+  IMG_EIFFEL_MOBILE,
+  IMG_EIFFEL_TABLET,
+} from "../../constants";
+import diorLogo from "../../icons/diorLogo.svg";
 
-import "../styles/login.scss";
-import classNames from "classnames";
+import "./loginPage.scss";
+import { useDevice } from "../../hooks/useDevice";
 
 const LOGIN_MUTATION = gql`
   mutation LoginMutation($email: String!, $password: String!) {
@@ -16,8 +22,16 @@ const LOGIN_MUTATION = gql`
   }
 `;
 
-const Login = () => {
+export default function LoginPage() {
+  const device = useDevice();
+  const imgUrl =
+    device === "desktop"
+      ? IMG_EIFFEL_DESKTOP
+      : device === "tablet"
+      ? IMG_EIFFEL_TABLET
+      : IMG_EIFFEL_MOBILE;
   const navigate = useNavigate();
+
   const [formState, setFormState] = useState({
     email: "",
     password: "",
@@ -32,7 +46,7 @@ const Login = () => {
       localStorage.setItem(AUTH_TOKEN, login.token);
       navigate("/");
     },
-    onError: () => console.log('Not logged in')
+    onError: () => console.log("Not logged in"),
   });
 
   return (
@@ -45,7 +59,11 @@ const Login = () => {
         <span>WELCOME</span>
         <span>いらっしゃいませ</span>
       </div>
-      <div className={classNames('container-flex-v', 'input-text', { 'error-field' : Boolean(error) })}>
+      <div
+        className={classNames("container-flex-v", "input-text", {
+          "error-field": Boolean(error),
+        })}
+      >
         {error && <p>{error.message}</p>}
         <div className="container-flex-v">
           <label htmlFor="email">LOGIN</label>
@@ -77,14 +95,14 @@ const Login = () => {
         </div>
       </div>
 
-      <div >
-        <button onClick={login} className="btn-login">LOGIN</button>
+      <div>
+        <button onClick={login} className="btn-login">
+          LOGIN
+        </button>
       </div>
       <div className="bg-image">
-        <img alt="eiffel" src={IMG_EIFFEL} />
+        <img alt="eiffel" src={imgUrl} />
       </div>
     </div>
   );
-};
-
-export default Login;
+}

@@ -11,7 +11,7 @@ import { setContext } from '@apollo/client/link/context';
 
 
 import App from "./components/App";
-import Login from "./components/Login";
+import LoginPage from "./pages/login/LoginPage";
 import Product from "./components/Product";
 import reportWebVitals from "./reportWebVitals";
 
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <Login />,
+        element: <LoginPage />,
       },
     ],
   },

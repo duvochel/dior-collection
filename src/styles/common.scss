@@ -21,24 +21,6 @@
   }
 }
 
-.title-multi {
-  margin-left: 2.08rem;
-  margin-bottom: 6.75rem;
-  color: #000;
-
-  span {
-    display: block;
-    &:first-child {
-      color: $base-color;
-      font-size: 2rem;
-    }
-    &:last-child {
-      margin-left: 5.06rem;
-      font-size: 1.5rem;
-    }
-  }
-}
-
 .error-field {
   color: #f00;
 }
