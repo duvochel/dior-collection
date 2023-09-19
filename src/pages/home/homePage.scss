@@ -1,0 +1,49 @@
+@import "../../styles/common.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.home-page-container {
+  @include flex-v;
+
+  align-items: center;
+  overflow-y: hidden;
+  .title-collection {
+    @include flex-v;
+  
+    width: 100%;
+    align-items: center;
+    gap: 3.25rem;
+    color: #000;
+    font-weight: 200;
+    margin-top: 0.75rem;
+  
+    @media (min-width: $desktop) {
+      margin-top: 4.81rem;
+      margin-bottom: 11rem;
+    }
+  
+    h2 {
+      font-weight: 200;
+      margin: 0;
+  
+      @media (min-width: $desktop) {
+        font-size: 2rem;
+      }
+    }
+  }
+  
+  .logo-key {
+    margin-top: 2.56rem;
+  
+    @media (min-width: $desktop) {
+      position: absolute;
+      top: 5.44rem;
+      margin: 0;
+    }
+  }
+  
+  .filters {
+    display: flex;
+  }
+}
+

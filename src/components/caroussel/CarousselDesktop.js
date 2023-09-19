@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import ProductCard from "./ProductCard";
-import ArrowButton from "./ArrowButton";
+import ProductCard from "../ProductCard";
+import ArrowButton from "../ArrowButton";
 
 export default function CarousselDesktop({ products, isMobile }) {
   const [currentIndex, setCurrentIndex] = useState(0);

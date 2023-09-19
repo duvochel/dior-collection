@@ -5,7 +5,7 @@ import LoginPage from "../pages/login/LoginPage";
 import Product from "./Product";
 
 import "../styles/app.scss";
-import ProductList from "./ProductList";
+import HomePage from "../pages/home/homePage";
 
 export default function App() {
   const location = useLocation();
@@ -16,7 +16,7 @@ export default function App() {
       {showHeader && <Header />}
       <div className="app-content">
         <Routes>
-          <Route path="/" element={<ProductList />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/product/:id" element={<Product />} />
           <Route path="/login" element={<LoginPage />} />
         </Routes>

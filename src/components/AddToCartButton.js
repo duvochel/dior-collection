@@ -1,9 +1,9 @@
 import { useState } from "react";
+import classNames from "classnames";
 
 import SidePanel from "./SidePanel";
 
 import "../styles/addToCartButton.scss";
-import classNames from "classnames";
 
 export default function AddToCartButton() {
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
@@ -25,7 +25,7 @@ export default function AddToCartButton() {
   return (
     <>
       {isOverlayVisible && <div className={overlayStyle} />}
-      <button className="btn-img" onClick={handleClick} />
+      <button className="btn-add-cart" onClick={handleClick} />
 
       <SidePanel isVisible={isPanelVisible} handleClose={handleClose} />
     </>

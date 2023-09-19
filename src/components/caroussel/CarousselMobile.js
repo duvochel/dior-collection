@@ -1,5 +1,5 @@
-import ProductCard from "./ProductCard";
-import "../styles/carousselMobile.scss";
+import ProductCard from "../ProductCard";
+import "./carousselMobile.scss";
 
 export default function CarousselMobile({ products }) {
   return (

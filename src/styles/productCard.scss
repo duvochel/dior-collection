@@ -11,13 +11,16 @@
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   transition: 300ms ease;
 
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    width: 45.46656rem;
+    height: 25.35206rem;
+  }
+
   @media (min-width: $desktop) {
     width: 51rem;
     height: 34.5625rem;
 
     &:hover {
-      // width: 50.8125rem;
-      // height: 34.4375rem;
       transform: scale(0.99);
 
       .product-image {
@@ -83,7 +86,7 @@
   left: 0;
   bottom: -0.25rem;
   transition: 300ms ease;
-  
+
   @media (max-width: $tablet) {
     width: 14.40594rem;
     height: 14.125rem;

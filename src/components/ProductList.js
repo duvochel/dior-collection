@@ -1,20 +1,15 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 
-import Caroussel from "./Caroussel";
-import Filters from "./filters/Filters";
-import AddToCartButton from "./AddToCartButton";
+import Caroussel from "./caroussel/Caroussel";
 
 import { CATALOG_QUERY } from "../queries/query";
 import { useDevice } from "../hooks/useDevice";
 
-import "../styles/productList.scss";
-
 export default function ProductList() {
   const { loading, error, data } = useQuery(CATALOG_QUERY);
   const device = useDevice();
-  const isMobile = device === "mobile";
-  const logoKeyUrl = `/images/logo_key-${device}.png`;
+  const isMobile = device !== "desktop";
 
   if (error) {
     return (
@@ -26,19 +21,11 @@ export default function ProductList() {
   }
 
   return (
-    <div className="list-container">
-      <div className="logo-key">
-        <img alt="logo-key" src={logoKeyUrl} />
-      </div>
-      <div className="title-collection">
-        <h2>THE SECRET COLLECTION</h2>
-        <Filters />
-      </div>
+    <>
       {loading && <>Loading...</>}
       {data && data.catalog?.products && (
         <Caroussel products={data.catalog.products} isMobile={isMobile} />
       )}
-      <AddToCartButton />
-    </div>
+    </>
   );
 }
