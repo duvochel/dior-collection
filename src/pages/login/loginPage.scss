@@ -4,6 +4,10 @@
 .login-page {
   padding-top: 3.06rem;
 
+  @media (min-width: $desktop) {
+    padding-top: 5.13rem;;
+  }
+
   .title-multi {
     margin-left: 2.08rem;
     margin-bottom: 6.75rem;
@@ -20,35 +24,10 @@
         font-size: 1.5rem;
       }
     }
-  }
-
-  .bg-image {
-    z-index: -1;
-    margin-top: 4.69rem;
-    overflow-x: hidden;
-    overflow-y: auto;
-    
-    img {
-      transform: scaleX(-1) translateX(9rem);
-    }
-
-    @media (min-width: $tablet) and (max-width: $desktop) {
-      position: absolute;
-      // TODO: 16.5rem on Figma
-      right: 0;
-      top: -0.62rem;
-      transform: scaleX(-1);
-    }
 
     @media (min-width: $desktop) {
-      right: 0;
-      bottom: 0px;
-      position: absolute;
-
-      img {
-        width: 69.5625rem;
-        height: 96.75rem;
-      }
+      margin-left: 13.75rem;
+      margin-bottom: 9.25rem;
     }
   }
 
@@ -58,6 +37,14 @@
     margin-left: 5.88rem;
     margin-bottom: 4.69rem;
     gap: 1.94rem;
+
+    @media (min-width: $tablet) and (max-width: $desktop) {
+      margin-left: 16.69rem;
+    }
+
+    @media (min-width: $desktop) {
+      margin-left: 20.31rem;
+    }
 
     input {
       border-top: none;
@@ -82,5 +69,41 @@
     border: none;
     border-radius: 0.625rem;
     background: linear-gradient(180deg, #1e1e1e 0%, #424242 100%);
+
+    @media (min-width: $tablet) and (max-width: $desktop) {
+      margin-left: 16.69rem;
+    }
+
+    @media (min-width: $desktop) {
+      margin-left: 19.44rem;
+    }
+  }
+
+  .bg-image {
+    z-index: -1;
+
+    @media (max-width: $tablet) {
+      overflow-x: hidden;
+      overflow-y: auto;
+      margin-top: 4.69rem;
+
+      img {
+        transform: scaleX(-1) translateX(9rem);
+      }
+    }
+
+    @media (min-width: $tablet) and (max-width: $desktop) {
+      position: absolute;
+      // right: -16.5rem;
+      right: 0;
+      top: -0.62rem;
+    }
+
+    @media (min-width: $desktop) {
+      position: absolute;
+      right: -14rem;
+      bottom: -15.62rem;
+      transform: scaleX(-1);
+    }
   }
 }

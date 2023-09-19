@@ -24,7 +24,7 @@ const LOGIN_MUTATION = gql`
 
 export default function LoginPage() {
   const device = useDevice();
-  const imgUrl =
+    const imgUrl =
     device === "desktop"
       ? IMG_EIFFEL_DESKTOP
       : device === "tablet"
@@ -94,12 +94,9 @@ export default function LoginPage() {
           />
         </div>
       </div>
-
-      <div>
-        <button onClick={login} className="btn-login">
-          LOGIN
-        </button>
-      </div>
+      <button onClick={login} className="btn-login">
+        LOGIN
+      </button>
       <div className="bg-image">
         <img alt="eiffel" src={imgUrl} />
       </div>

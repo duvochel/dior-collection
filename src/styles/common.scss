@@ -12,6 +12,10 @@
 .logo-center {
   align-self: center;
   margin-bottom: 8.37rem;
+
+  @media (min-width: $desktop) {
+    margin-left: 10rem;
+  }
 }
 
 .image-box {

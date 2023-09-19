@@ -1,27 +1,26 @@
-import { useState } from "react";
-import { useWindowSize, useEventListener, useIsomorphicLayoutEffect } from "usehooks-ts";
+import { useEffect, useState } from "react";
+import {
+  useWindowSize,
+} from "usehooks-ts";
 
 export function useDevice() {
   const [device, setDevice] = useState();
   const { width } = useWindowSize();
-  
-  const handleDevice = () => {
-    
+
+  useEffect(() => {
+    handleDevice(width);
+  }, [width]);
+
+  const handleDevice = (width) => {
+    console.log({ width });
     if (width > 834) {
-      setDevice('desktop');
+      setDevice("desktop");
     } else if (width > 390) {
-      setDevice('tablet');
+      setDevice("tablet");
     } else {
-      setDevice('mobile');
+      setDevice("mobile");
     }
-  }
+  };
 
-  useEventListener('resize', handleDevice)
-
-  // Set device at the first client-side load
-  useIsomorphicLayoutEffect(() => {
-    handleDevice()
-  }, [])
-
-  return device
+  return device;
 }
