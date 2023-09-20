@@ -24,7 +24,7 @@ const LOGIN_MUTATION = gql`
 
 export default function LoginPage() {
   const device = useDevice();
-    const imgUrl =
+  const imgUrl =
     device === "desktop"
       ? IMG_EIFFEL_DESKTOP
       : device === "tablet"
@@ -51,53 +51,55 @@ export default function LoginPage() {
 
   return (
     <div className="container-flex-v login-page">
-      <div className="logo-center">
+      <div className="logo-center slide-top">
         <img alt="logo-dior" src={diorLogo} />
       </div>
-      <div className="title-multi">
+      <div className="title-multi slide-left">
         <span>BIENVENUE</span>
         <span>WELCOME</span>
         <span>いらっしゃいませ</span>
       </div>
-      <div
-        className={classNames("container-flex-v", "input-text", {
-          "error-field": Boolean(error),
-        })}
-      >
-        {error && <p>{error.message}</p>}
-        <div className="container-flex-v">
-          <label htmlFor="email">LOGIN</label>
-          <input
-            name="email"
-            value={formState.email}
-            onChange={(e) =>
-              setFormState({
-                ...formState,
-                email: e.target.value,
-              })
-            }
-            type="text"
-          />
+      <div className="slide-bottom">
+        <div
+          className={classNames("container-flex-v", "input-text", {
+            "error-field": Boolean(error),
+          })}
+        >
+          {error && <p>{error.message}</p>}
+          <div className="container-flex-v">
+            <label htmlFor="email">LOGIN</label>
+            <input
+              name="email"
+              value={formState.email}
+              onChange={(e) =>
+                setFormState({
+                  ...formState,
+                  email: e.target.value,
+                })
+              }
+              type="text"
+            />
+          </div>
+          <div className="container-flex-v">
+            <label htmlFor="pwd">PASSWORD</label>
+            <input
+              name="pwd"
+              value={formState.password}
+              onChange={(e) =>
+                setFormState({
+                  ...formState,
+                  password: e.target.value,
+                })
+              }
+              type="password"
+            />
+          </div>
         </div>
-        <div className="container-flex-v">
-          <label htmlFor="pwd">PASSWORD</label>
-          <input
-            name="pwd"
-            value={formState.password}
-            onChange={(e) =>
-              setFormState({
-                ...formState,
-                password: e.target.value,
-              })
-            }
-            type="password"
-          />
-        </div>
+        <button onClick={login} className="btn-login">
+          LOGIN
+        </button>
       </div>
-      <button onClick={login} className="btn-login">
-        LOGIN
-      </button>
-      <div className="bg-image">
+      <div className="bg-image slide-right">
         <img alt="eiffel" src={imgUrl} />
       </div>
     </div>

@@ -5,7 +5,16 @@
   padding-top: 3.06rem;
 
   @media (min-width: $desktop) {
-    padding-top: 5.13rem;;
+    padding-top: 5.13rem;
+  }
+
+  .logo-center {
+    align-self: center;
+    margin-bottom: 8.37rem;
+
+    @media (min-width: $desktop) {
+      margin-left: 10rem;
+    }
   }
 
   .title-multi {
@@ -67,6 +76,7 @@
     font-size: 1.5rem;
     font-weight: 200;
     border: none;
+    cursor: pointer;
     border-radius: 0.625rem;
     background: linear-gradient(180deg, #1e1e1e 0%, #424242 100%);
 
