@@ -1,25 +1,29 @@
+import { useDevice } from "../../hooks/useDevice";
 import trashIcon from "../../icons/trashIcon.svg";
+
 import "./cartProduct.scss";
 
 export default function CartProduct({ product }) {
+  const productImgUrl =
+    useDevice() === "mobile" ? product.image.mini : product.image.tablet;
   return (
     <>
       <div className="cart-product-list">
         <div className="cart-product">
-          <div className="product-cart-image">
-            <img alt={product.name} src={product.image.mini} />
+          <div className="cart-product-image">
+            <img alt={product.name} src={productImgUrl} />
           </div>
           <button className="btn-trash">
             <img alt="trash" src={trashIcon} />
           </button>
-          <div className="product-info">
-            <div className="product-info-name">
+          <div className="cart-product-info">
+            <div className="cart-product-info-name">
               <span>{product.name}</span>
             </div>
-            <div className="product-info-price">
+            <div className="cart-product-info-price">
               <span>{product.price}</span>
             </div>
-            <div className="btn-items-image">
+            <div className="cart-product-info-btn-items">
               <img alt="" src="/images/cart-items.png" />
             </div>
           </div>
