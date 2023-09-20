@@ -12,7 +12,7 @@ export function useDevice() {
   }, [width]);
 
   const handleDevice = (width) => {
-    console.log({ width });
+    
     if (width > 834) {
       setDevice("desktop");
     } else if (width > 390) {

@@ -21,6 +21,29 @@ export const CATALOG_QUERY = gql`
   }
 `;
 
+export const CART_QUERY = gql`
+  {
+    cart {
+      id
+      products {
+        id
+        description
+        name
+        price
+        image {
+          desktop
+          tablet
+          mobile
+          mini
+        }
+      }
+      taxes
+      total
+      count
+    }
+  }
+`;
+
 export const GET_PRODUCT = gql`
   query GetProduct($id: ID!) {
     product(productId: $id) {

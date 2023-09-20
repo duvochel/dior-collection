@@ -1,7 +1,13 @@
 type Query {
   catalog: Catalog!
   product(productId: ID!): Product!
+  cart: Cart!
 }
+
+type Mutation {
+  login(email: String!, password: String!): AuthPayload
+}
+
 
 type Catalog {
   id: ID!
@@ -24,8 +30,12 @@ type Image {
   mini: String!
 }
 
-type Mutation {
-  login(email: String!, password: String!): AuthPayload
+type Cart {
+  id: ID!
+  products: [Product]
+  count: Int!
+  taxes: String
+  total: String
 }
 
 type AuthPayload {

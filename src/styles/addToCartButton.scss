@@ -1,6 +1,6 @@
 @import "../styles/variables.scss";
 
-// TODO: create button component with icon
+// TODO: create button component with icon & add shadow to button
 .btn-add-cart {
   width: 21.75rem;
   height: 4.75rem;
@@ -8,6 +8,7 @@
   border: none;
   background: none;
   cursor: pointer;
+  border-radius: 2.875rem;
   background-image: url("../../public/images/btn_cart.png");
   background-repeat: no-repeat;
   background-size: 100%;
