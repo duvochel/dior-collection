@@ -12,6 +12,7 @@ export default function Caroussel({ products }) {
   const isDesktop = device === "desktop";
 
   const [currentIndex, setCurrentIndex] = useState(0);
+
   let nextIndex;
   let previousIndex;
 
@@ -35,11 +36,31 @@ export default function Caroussel({ products }) {
     setCurrentIndex(previousIndex);
   }
 
+  function getPosition(index) {
+    if (currentIndex === index) {
+      return "current";
+    } else if (currentIndex === index + 1) {
+      return "previous";
+    } else if (currentIndex === index - 1) {
+      return "next";
+    } else if (currentIndex === index + 2) {
+      return "before";
+    } else if (currentIndex === index - 2) {
+      return "after";
+    }
+    return "out";
+  }
   return (
     <>
       <div className="caroussel">
-        {products.map((product) => {
-          return <ProductCard key={product.id} product={product} />;
+        {products.map((product, index) => {
+          return (
+            <ProductCard
+              key={product.id}
+              product={product}
+              position={getPosition(index)}
+            />
+          );
         })}
       </div>
       {nextIndex && isDesktop && (

@@ -5,9 +5,10 @@ import Caroussel from "./caroussel/Caroussel";
 
 import { CATALOG_QUERY } from "../queries/query";
 
+import "./productList.scss";
+
 export default function ProductList() {
   const { loading, error, data } = useQuery(CATALOG_QUERY);
-
 
   if (error) {
     return (
@@ -22,7 +23,9 @@ export default function ProductList() {
     <>
       {loading && <>Loading...</>}
       {data && data.catalog?.products && (
-        <Caroussel products={data.catalog.products} />
+        <div className="caroussel-wrapper">
+          <Caroussel products={data.catalog.products} />
+        </div>
       )}
     </>
   );

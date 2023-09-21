@@ -5,8 +5,13 @@
   gap: 1.03rem;
   margin-top: 4.13rem;
 
-  @media (min-width: $desktop) {
+  @media (min-width: $tablet) {
+    margin-top: 11.19rem;
     margin: 0;
-    transform: translateX(51rem);
+  }
+
+  @media (min-width: $desktop) {
+    gap: 0;
+    align-items: flex-end;
   }
 }

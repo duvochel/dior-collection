@@ -1,18 +1,10 @@
 @import "./mixins.scss";
 
-@mixin bgImage {
-  position: absolute;
-  top: 36.25rem;
-  width: 17.633rem;
-  height: 22.00319rem;
-  opacity: 0.08;
-}
-
 @mixin arrowIcon {
   @include img-box;
 
   position: absolute;
-  top: 39.25rem;
+  top: 12rem;
   width: 4rem;
   height: 8.4375rem;
   cursor: pointer;
@@ -23,30 +15,18 @@
   &:hover {
     opacity: 0.34;
     transform: scale(1.2);
+    color: #545454;
   }
-}
-
-.product-mini-right {
-  @include bgImage();
-
-  right: 2.31rem;
-}
-
-// TODO : fix image men_shirt no repeat
-.product-mini-left {
-  @include bgImage();
-
-  left: -4.69rem;
 }
 
 .arrow-right {
   @include arrowIcon();
 
-  right: 2.62rem;
+  right: -23rem;
 }
 
 .arrow-left {
   @include arrowIcon();
 
-  left: 2.62rem;
+  left: -21rem;
 }

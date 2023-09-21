@@ -2,93 +2,195 @@
 @import "./variables.scss";
 @import "./mixins.scss";
 
-.card {
+.card-product {
+  display: flex;
+  flex-direction: column-reverse;
+
   position: relative;
-  align-items: end;
-  width: 21.05644rem;
+  align-items: flex-end;
+  min-width: 20.84269rem;
+  min-height: 11.62181rem;
+  overflow-y: visible;
   border-radius: 0.625rem;
   background: #fff;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  transition: 300ms ease;
+
+  transition: opacity 0.5s, left 0.5s, min-width 0.5s;
+  transition-timing-function: ease-out;
 
   @media (min-width: $tablet) and (max-width: $desktop) {
-    width: 45.46656rem;
-    height: 25.35206rem;
+    min-width: 45.46656rem;
+    min-height: 25.35206rem;
   }
 
   @media (min-width: $desktop) {
-    width: 51rem;
-    height: 34.5625rem;
+    position: absolute;
+    min-width: 51rem;
+    min-height: 28.4375rem;
+  }
 
-    &:hover {
-      transform: scale(0.99);
+  &-image {
+    @include img-box;
 
-      .product-image {
-        transform: scale(0.99);
-      }
+    position: absolute;
+    left: 0;
+    bottom: -0.25rem;
+    transition: min-width 0.5s ease-out;
+  }
 
-      .product-name {
-        transform: scale(0.99);
-      }
+  &-price {
+    color: #000;
+    font-weight: 100;
+    line-height: 19.36px;
+    margin: 0.2rem 0.6rem 0.5rem 0;
 
-      .product-price {
-        transform: scale(0.99);
-      }
+    @media (min-width: $tablet) {
+      font-size: 1.25rem;
+      margin: 1.06rem 2.6rem 1.19rem 0;
+    }
+
+    @media (min-width: $desktop) {
+      margin: 1.16rem 2.62rem 2rem 0;
+      font-size: 1.25rem;
+      transition: 300ms ease;
+    }
+  }
+
+  &-name {
+    color: #000;
+    font-size: 1.25rem;
+    font-weight: 100;
+    line-height: 24.2px;
+    margin: 2rem 0.5rem 0 0;
+
+    @media (min-width: $tablet) {
+      margin: 9.07rem 2.6rem 0 0;
+      font-size: 2rem;
+    }
+
+    @media (min-width: $desktop) {
+      margin: 10.12rem 1.5rem 0 0;
+      font-size: 2rem;
+      transition: 300ms ease;
     }
   }
 
   &-description {
-    width: 8.57156rem;
-    height: 5.55344rem;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    max-width: 8.57156rem;
+    margin-right: 1.13rem;
     color: #4b4b4b;
-    margin: 0.43rem 1.13rem 0 0;
     font-size: 0.75rem;
     font-style: italic;
     font-weight: 300;
+    line-height: 14.52px;
+
+    span {
+      text-align: left;
+    }
+
+    @media (min-width: $tablet) {
+      max-width: 18.66581rem;
+      font-size: 1rem;
+      margin-right: 2.56rem;
+    }
 
     @media (min-width: $desktop) {
-      width: 20.9375rem;
+      max-width: 20.9375rem;
       margin: 7.38rem 1.37rem 0 0;
       font-size: 1rem;
     }
   }
 }
 
-.product-price {
-  color: #000;
-  font-weight: 100;
-  margin: 0.82rem 0.5rem 1rem 0;
-
-  @media (min-width: $desktop) {
-    margin: 1.16rem 2.62rem 2rem 0;
-    font-size: 1.25rem;
-    transition: 300ms ease;
-  }
-}
-
-.product-name {
-  color: #000;
-  font-size: 1.25rem;
-  font-weight: 100;
-  margin: 2.21rem 0.5rem 0 0;
-
-  @media (min-width: $desktop) {
-    margin: 10.12rem 1.5rem 0 0;
-    font-size: 2rem;
-    transition: 300ms ease;
-  }
-}
-
-.product-image {
-  @include img-box;
-
+@mixin side-image-base {
   position: absolute;
-  left: 0;
-  bottom: -0.25rem;
-  transition: 300ms ease;
+  bottom: 0;
+  opacity: 0.08;
+  min-width: 27.67019rem;
 
-  @media (max-width: $tablet) {
-    width: 14.40594rem;
-    height: 14.125rem;
+  .card-product-price,
+  .card-product-description {
+    opacity: 0;
+  }
+}
+
+.card-product-image.next {
+  @media (min-width: $desktop) {
+    width: 60%;
+  }
+}
+
+.card-product-image.previous {
+  @media (min-width: $desktop) {
+    width: 60%;
+  }
+}
+
+.card-product-image.after {
+  @media (min-width: $desktop) {
+    width: 60%;
+  }
+}
+
+.card-product-image.before {
+  @media (min-width: $desktop) {
+    width: 60%;
+  }
+}
+
+.card-product.next {
+  @media (min-width: $desktop) {
+    @include side-image-base();
+
+    left: 59rem;
+  }
+}
+
+.card-product.after {
+  @media (min-width: $desktop) {
+    @include side-image-base();
+
+    left: 80rem;
+  }
+}
+
+.card-product.previous {
+  @media (min-width: $desktop) {
+    @include side-image-base();
+
+    left: -29rem;
+  }
+}
+
+.card-product.before {
+  @media (min-width: $desktop) {
+    @include side-image-base();
+
+    left: -60rem;
+  }
+}
+
+.card-product.current {
+  @media (min-width: $desktop) {
+    left: 0;
+    bottom: 0;
+
+    &:hover {
+      transform: scale(0.99);
+
+      .transform-hover {
+        transform: scale(0.99);
+      }
+    }
+  }
+}
+
+.out {
+  @media (min-width: $desktop) {
+    display: none;
   }
 }

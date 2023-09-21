@@ -6,18 +6,11 @@ import "../styles/arrowButton.scss";
 
 export default function ArrowButton({ imageUrl, direction, handleClick }) {
   const buttonStyle = classNames(`arrow-${direction}`);
-  const imgStyle = classNames(`product-mini-${direction}`);
   const iconArrow = direction === "right" ? arrowRight : arrowLeft;
 
   return (
-    <>
-      <div
-        className={`${imgStyle} fixed-appear`}
-        
-      />
       <button className={`${buttonStyle} fixed-appear-full`} onClick={handleClick}>
         <img alt="next-product" src={iconArrow} />
       </button>
-    </>
   );
 }
