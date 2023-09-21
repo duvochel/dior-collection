@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useWindowSize, useHover } from "usehooks-ts";
 
 import { DESCRIPTION_BETA } from "../constants";
@@ -9,7 +9,18 @@ export default function ProductCard({ product, position }) {
   const hoverRef = useRef(null);
   const isHover = useHover(hoverRef);
   const isCurrent = position === "current";
-  const slideLeft = false /*isCurrent ? "slide-left" : "";*/
+
+  const [isAnimate, setIsAnimate] = useState(true);
+
+  const slideLeft = isCurrent && isAnimate ? "slide-left" : "";
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsAnimate(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   let imageUrl;
   if (width > 834) {
