@@ -28,7 +28,7 @@ export default function Filters() {
   }
 
   return (
-    <div className="filters-container">
+    <div className="filters-container slide-bottom-x2">
       <div className="filter" onClick={handleClickFilters}>
         <FilterItem item={filterItem} isTitle />
       </div>

@@ -5,6 +5,10 @@
   display: flex;
   position: relative;
 
+  @media (max-width: $tablet) {
+    margin-left: 3.12rem;
+  }
+
   @media (min-width: $large-screen) {
     position: absolute;
     top: 11rem;

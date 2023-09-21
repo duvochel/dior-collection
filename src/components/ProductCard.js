@@ -19,21 +19,21 @@ export default function ProductCard({ product }) {
   }
 
   return (
-    <div className="container-flex-v card" ref={hoverRef}>
+    <div className="container-flex-v card slide-left" ref={hoverRef}>
       <div className="product-image">
         <img alt={product.name} src={imageUrl} />
       </div>
-      <div className="card-description">
+      <div className="card-description slide-left">
         {isHover ? (
           <span>{DESCRIPTION_BETA}</span>
         ) : (
           <span>{product.description}</span>
         )}
       </div>
-      <div className="product-name">
+      <div className="product-name slide-left">
         <span>{product.name}</span>
       </div>
-      <div className="product-price">
+      <div className="product-price slide-left">
         <span>{product.price}</span>
       </div>
     </div>

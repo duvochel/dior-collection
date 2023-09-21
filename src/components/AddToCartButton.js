@@ -25,7 +25,7 @@ export default function AddToCartButton() {
   return (
     <>
       {isOverlayVisible && <div className={overlayStyle} />}
-      <button className="btn-add-cart" onClick={handleClick} />
+      <button className="btn-add-cart slide-bottom" onClick={handleClick} />
 
       <SidePanel isVisible={isPanelVisible} handleClose={handleClose} />
     </>

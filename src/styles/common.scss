@@ -21,17 +21,44 @@
 }
 
 .slide-bottom {
-  animation: slideInFromBottom 2s ease-out forwards;
+  @media (min-width: $desktop) {
+    animation: slideInFromBottom 2s ease-out forwards;
+  }
+}
+
+.slide-bottom-x2 {
+  @media (min-width: $desktop) {
+    animation: slideInFromBottomTimes2 2s ease-out forwards;
+  }
 }
 
 .slide-top {
-  animation: slideInFromTop 2s ease-out forwards;
+  @media (min-width: $desktop) {
+    animation: slideInFromTop 2s ease-out forwards;
+  }
 }
 .slide-left {
-  animation: slideInFromLeft 2s ease-out forwards;
+  @media (min-width: $desktop) {
+    animation: slideInFromLeft 2s ease-out forwards;
+  }
 }
 .slide-right {
-  animation: slideInFromRight 2s ease-out forwards;
+  @media (min-width: $desktop) {
+    animation: slideInFromRight 2s ease-out forwards;
+  }
+}
+
+.fixed-appear {
+  @media (min-width: $desktop) {
+    animation: appearFixed 1500ms ease-out forwards;
+  }
+}
+
+// TODO: refactor, rename and combine.
+.fixed-appear-full {
+  @media (min-width: $desktop) {
+    animation: appearFixedFull 1500ms ease-out forwards;
+  }
 }
 
 @keyframes slideInFromRight {
@@ -79,5 +106,36 @@
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromBottomTimes2 {
+  0% {
+    transform: translateY(200%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes appearFixed {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.08;
+  }
+}
+
+@keyframes appearFixedFull {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

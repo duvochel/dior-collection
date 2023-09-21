@@ -10,12 +10,12 @@ const Header = () => {
   return (
     <div className="app-bar">
       <Link to="/">
-        <div className="logo-header">
+        <div className="logo-header slide-top">
           <img alt="logo-dior" src={diorLogo} />
         </div>
       </Link>
       <Link to="/login">
-        <div className="cart-icon image-box">
+        <div className="cart-icon image-box slide-top">
           <img alt="shopping-cart" src={cartIcon} />
         </div>
       </Link>

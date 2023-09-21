@@ -11,11 +11,15 @@ export default function HomePage() {
 
   return (
     <div className="home-page-container">
-      <div className="logo-key">
-        <img alt="logo-key" src={logoKeyUrl} />
-      </div>
-      <div className="title-collection">
-        <h2>THE SECRET COLLECTION</h2>
+      <div className="home-header">
+        <div className="home-title slide-top">
+          <div className="logo-key">
+            <img alt="logo-key" src={logoKeyUrl} />
+          </div>
+          <div className="title-collection">
+            <h2>THE SECRET COLLECTION</h2>
+          </div>
+        </div>
         <Filters />
       </div>
       <ProductList />

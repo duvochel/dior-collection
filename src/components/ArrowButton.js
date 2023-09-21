@@ -12,13 +12,13 @@ export default function ArrowButton({ imageUrl, direction, handleClick }) {
   return (
     <>
       <div
-        className={imgStyle}
+        className={`${imgStyle} fixed-appear`}
         style={{
           background: `url("${imageUrl}"),
     lightgray 50% / cover no-repeat`,
         }}
       />
-      <button className={buttonStyle} onClick={handleClick}>
+      <button className={`${buttonStyle} fixed-appear-full`} onClick={handleClick}>
         <img alt="next-product" src={iconArrow} />
       </button>
     </>
