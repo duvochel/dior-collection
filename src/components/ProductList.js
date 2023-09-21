@@ -4,12 +4,10 @@ import { useQuery } from "@apollo/client";
 import Caroussel from "./caroussel/Caroussel";
 
 import { CATALOG_QUERY } from "../queries/query";
-import { useDevice } from "../hooks/useDevice";
 
 export default function ProductList() {
   const { loading, error, data } = useQuery(CATALOG_QUERY);
-  const device = useDevice();
-  const isMobile = device !== "desktop";
+
 
   if (error) {
     return (
@@ -24,7 +22,7 @@ export default function ProductList() {
     <>
       {loading && <>Loading...</>}
       {data && data.catalog?.products && (
-        <Caroussel products={data.catalog.products} isMobile={isMobile} />
+        <Caroussel products={data.catalog.products} />
       )}
     </>
   );

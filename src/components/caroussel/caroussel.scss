@@ -1,11 +1,12 @@
 @import "../../styles/variables.scss";
 
-.caroussel-mobile {
+.caroussel {
   display: flex;
   gap: 1.03rem;
   margin-top: 4.13rem;
 
   @media (min-width: $desktop) {
     margin: 0;
+    transform: translateX(51rem);
   }
 }
