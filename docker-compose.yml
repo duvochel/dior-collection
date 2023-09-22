@@ -2,7 +2,7 @@ services:
   front:
     image: franck612/dior-front:latest
     ports: 
-      - 3000:3000
+      - 3000:80
   server:
     image: franck612/dior-server:latest
     ports:

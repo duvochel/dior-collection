@@ -9,22 +9,27 @@ import {
 } from "@apollo/client";
 import { setContext } from '@apollo/client/link/context';
 
-
 import App from "./components/App";
 import Product from "./components/Product";
-import reportWebVitals from "./reportWebVitals";
-
-import { AUTH_TOKEN } from "./constants";
-import "./styles/index.scss";
 import HomePage from "./pages/home/homePage";
+import LoginPage from "./pages/login/LoginPage";
+
+import reportWebVitals from "./reportWebVitals";
+import { AUTH_TOKEN } from "./constants";
+
+import "./styles/index.scss";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
+    element: <LoginPage/>
+  },
+  {
+    path: "/home",
     element: <App />,
     children: [
       {
-        path: "/product/:id",
+        path: "/home/product/:id",
         element: <Product />,
       },
       {
