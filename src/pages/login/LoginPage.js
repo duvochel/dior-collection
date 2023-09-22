@@ -44,7 +44,7 @@ export default function LoginPage() {
     },
     onCompleted: ({ login }) => {
       localStorage.setItem(AUTH_TOKEN, login.token);
-      navigate("/");
+      navigate("/home");
     },
     onError: () => console.log("Not logged in"),
   });

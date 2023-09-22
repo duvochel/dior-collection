@@ -9,16 +9,16 @@ import HomePage from "../pages/home/homePage";
 
 export default function App() {
   const location = useLocation();
-  const showHeader = location.pathname !== "/login";
+  const showHeader = location.pathname !== "/";
 
   return (
     <>
       {showHeader && <Header />}
       <div className="app-content">
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/home" element={<HomePage />} />
           <Route path="/product/:id" element={<Product />} />
-          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </div>
     </>

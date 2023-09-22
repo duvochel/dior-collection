@@ -11,12 +11,12 @@ import { setContext } from '@apollo/client/link/context';
 
 
 import App from "./components/App";
-import LoginPage from "./pages/login/LoginPage";
 import Product from "./components/Product";
 import reportWebVitals from "./reportWebVitals";
 
 import { AUTH_TOKEN } from "./constants";
 import "./styles/index.scss";
+import HomePage from "./pages/home/homePage";
 
 const router = createBrowserRouter([
   {
@@ -28,8 +28,8 @@ const router = createBrowserRouter([
         element: <Product />,
       },
       {
-        path: "/login",
-        element: <LoginPage />,
+        path: "/home",
+        element: <HomePage />,
       },
     ],
   },

@@ -9,12 +9,12 @@ import "../styles/header.scss";
 const Header = () => {
   return (
     <div className="app-bar">
-      <Link to="/">
+      <Link to="/home">
         <div className="logo-header slide-top">
           <img alt="logo-dior" src={diorLogo} />
         </div>
       </Link>
-      <Link to="/login">
+      <Link to="/">
         <div className="cart-icon image-box slide-top">
           <img alt="shopping-cart" src={cartIcon} />
         </div>

@@ -1,9 +1,9 @@
 services:
   front:
-    image: franck612/dior-front:latest
+    build: .
     ports: 
       - 3000:3000
   server:
-    image: franck612/dior-server:latest
+    build: ./server/
     ports:
       - 4000:4000
