@@ -164,6 +164,10 @@
       margin-left: 6.09rem;
       border-radius: 2.88rem;
     }
+
+    @media (min-width: $desktop) {
+      margin-top: 8.19rem;
+    }
   }
 }
 
