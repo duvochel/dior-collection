@@ -6,6 +6,7 @@
   @include flex-v;
 
   align-items: center;
+  overflow-y: hidden;
 
   .home-header {
     display: flex;

@@ -12,12 +12,16 @@
   background-image: url(../icons/sidePanel_bg.svg);
   background-repeat: no-repeat;
   background-size: cover;
-  transition: right 0.3s ease-in-out;
+  overflow-y: auto;
 
   @media (min-width: $tablet) {
     background-image: url(../icons/sidePanel_bg-desktop.svg);
     width: 46.28125rem;
     right: -46.28125rem;
+  }
+
+  @media (min-width: $desktop) {
+    transition: right 0.3s ease-in-out;
   }
 
   &-close-btn {

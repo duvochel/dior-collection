@@ -1,5 +1,6 @@
 import { useState } from "react";
 import classNames from "classnames";
+import { useMediaQuery } from "usehooks-ts";
 
 import SidePanel from "./SidePanel";
 
@@ -9,12 +10,16 @@ export default function AddToCartButton() {
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const [isPanelVisible, setIsPanelVisible] = useState(false);
   const overlayStyle = classNames("overlay", { dark: isPanelVisible });
+  const isDesktop = useMediaQuery("(min-width: 835px)");
 
   function handleClick() {
     setIsOverlayVisible(true);
-    setTimeout(() => {
-      setIsPanelVisible(true);
-    }, 500);
+    setTimeout(
+      () => {
+        setIsPanelVisible(true);
+      },
+      isDesktop ? 500 : 0
+    );
   }
 
   function handleClose() {

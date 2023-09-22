@@ -2,10 +2,10 @@
 @import "../styles/common.scss";
 
 .caroussel-wrapper {
-  @media (min-width: $desktop) {
+    @media (min-width: $desktop) {
     width: 51rem;
     height: 28.4375rem;
     margin: auto;
     position: relative;
-  }
+      }
 }
