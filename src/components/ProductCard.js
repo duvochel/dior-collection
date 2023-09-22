@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from "react";
-import { useWindowSize, useHover } from "usehooks-ts";
+import { useHover, useMediaQuery } from "usehooks-ts";
 
 import { DESCRIPTION_BETA } from "../constants";
 import "../styles/productCard.scss";
 
 export default function ProductCard({ product, position }) {
-  const { width } = useWindowSize();
+  const isDesktop = useMediaQuery("(min-width: 835px)")
+  const isTablet = useMediaQuery("(min-width: 391px) and (max-width: 834px)")
+
   const hoverRef = useRef(null);
   const isHover = useHover(hoverRef);
   const isCurrent = position === "current";
@@ -23,14 +25,14 @@ export default function ProductCard({ product, position }) {
   }, []);
 
   let imageUrl;
-  if (width > 834) {
+  if (isDesktop) {
     imageUrl = product.image.desktop;
-  } else if (width > 390) {
+  } else if (isTablet) {
     imageUrl = product.image.tablet;
   } else {
     imageUrl = product.image.mobile;
   }
-
+  
   return (
     <div className={`card-product ${slideLeft} ${position}`} ref={hoverRef}>
       <div className={`card-product-image ${position} transform-hover`}>

@@ -98,13 +98,12 @@
       margin-top: 4.69rem;
 
       img {
-        transform: scaleX(-1) translateX(9rem);
+        transform: scaleX(-1);
       }
     }
 
     @media (min-width: $tablet) and (max-width: $desktop) {
       position: absolute;
-      // right: -16.5rem;
       right: 0;
       top: -0.62rem;
     }
