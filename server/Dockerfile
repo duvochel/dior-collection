@@ -6,6 +6,7 @@ COPY src/ /app/src
 COPY yarn.lock /app/
 COPY package.json /app/
 
+ENV NODE_ENV=production
 RUN yarn
 
 EXPOSE 4000
