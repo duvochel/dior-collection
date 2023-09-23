@@ -1,11 +1,13 @@
-const jwt = require('jsonwebtoken');
-const APP_SECRET = 'GraphQL-is-aw3some';
+import { Request } from 'express';
 
-function getTokenPayload(token) {
+const jwt = require('jsonwebtoken');
+export const APP_SECRET = 'GraphQL-is-aw3some';
+
+function getTokenPayload(token: string): any {
   return jwt.verify(token, APP_SECRET);
 }
 
-function getUserId(req, authToken) {
+export function getUserId(req: Request, authToken: string): string {
   if (req) {
     const authHeader = req.headers.authorization;
     if (authHeader) {
@@ -23,8 +25,3 @@ function getUserId(req, authToken) {
 
   throw new Error('Not authenticated');
 }
-
-module.exports = {
-  APP_SECRET,
-  getUserId
-};

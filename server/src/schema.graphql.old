@@ -11,7 +11,7 @@ type Mutation {
 
 type Catalog {
   id: ID!
-  products: [Product!]
+  products: [Product!]!
   count: Int!
 }
 

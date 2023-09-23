@@ -1,4 +1,4 @@
-const products = [
+export const productListMock = [
   {
     id: "0",
     name: "MEN SHIRT",
@@ -39,5 +39,3 @@ const products = [
     },
   },
 ];
-
-module.exports = products;
