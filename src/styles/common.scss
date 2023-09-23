@@ -18,6 +18,10 @@
 
 .error-field {
   color: #f00;
+  font-weight: 400;
+  input {
+    border-bottom-color: #f00 !important;
+  }
 }
 
 .slide-bottom {

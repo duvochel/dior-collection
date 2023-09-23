@@ -46,6 +46,7 @@
     margin-left: 5.88rem;
     margin-bottom: 4.69rem;
     gap: 1.94rem;
+    text-wrap: nowrap;
 
     @media (min-width: $tablet) and (max-width: $desktop) {
       margin-left: 16.69rem;
@@ -61,6 +62,7 @@
       border-right: none;
       border-bottom: 0.08rem solid #afafaf;
       background-color: white;
+      max-width:  14.375rem;
 
       &:first-child {
         margin-bottom: 1.94rem;

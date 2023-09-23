@@ -65,7 +65,7 @@ export default function LoginPage() {
             "error-field": Boolean(error),
           })}
         >
-          {error && <p>{error.message}</p>}
+          {error && <span>{error.message}</span>}
           <div className="container-flex-v">
             <label htmlFor="email">LOGIN</label>
             <input
