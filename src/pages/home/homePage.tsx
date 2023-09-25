@@ -1,3 +1,5 @@
+import React from "react";
+
 import AddToCartButton from "../../components/AddToCartButton";
 import ProductList from "../../components/ProductList";
 import Filters from "../../components/filters/Filters";

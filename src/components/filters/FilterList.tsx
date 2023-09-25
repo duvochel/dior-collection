@@ -1,3 +1,5 @@
+import React from "react";
+
 import FilterItem from "./FilterItem";
 
 import { FILTER_ITEMS } from "../../constants";

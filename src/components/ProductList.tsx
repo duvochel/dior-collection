@@ -1,11 +1,11 @@
-import React from "react";
-import { useQuery } from "@apollo/client";
+import React from 'react';
+import { useQuery } from '@apollo/client';
 
-import Caroussel from "./caroussel/Caroussel";
+import Caroussel from './caroussel/Caroussel';
 
-import { CATALOG_QUERY } from "../queries/query";
+import { CATALOG_QUERY } from '../queries/query';
 
-import "./productList.scss";
+import './productList.scss';
 
 export default function ProductList() {
   const { loading, error, data } = useQuery(CATALOG_QUERY);

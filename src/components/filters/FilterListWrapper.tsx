@@ -1,11 +1,16 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 import { useOnClickOutside } from "usehooks-ts";
 
 import "./filterListWrapper.scss";
 import FilterList from "./FilterList";
 import SortList from "./SortList";
 
-export default function FilterListWrapper({ onClose, isSort }) {
+interface FilterListWrapperProps {
+  onClose: Function,
+  isSort?: boolean,
+}
+
+export default function FilterListWrapper({ onClose, isSort }: FilterListWrapperProps) {
   const listRef = useRef(null);
   const arrowStyle = isSort ? "arrow-top-sort" : "arrow-top";
 

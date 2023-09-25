@@ -1,3 +1,5 @@
+import React from "react";
+
 import FilterItem from "./FilterItem";
 
 import { SORT_ITEMS } from "../../constants";

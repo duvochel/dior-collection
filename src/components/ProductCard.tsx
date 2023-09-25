@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useHover, useMediaQuery } from "usehooks-ts";
 
 import { DESCRIPTION_BETA } from "../constants";

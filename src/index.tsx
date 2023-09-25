@@ -10,7 +10,6 @@ import {
 import { setContext } from '@apollo/client/link/context';
 
 import App from "./components/App";
-import Product from "./components/Product";
 import HomePage from "./pages/home/homePage";
 import LoginPage from "./pages/login/LoginPage";
 
@@ -28,10 +27,6 @@ const router = createBrowserRouter([
     path: "/home",
     element: <App />,
     children: [
-      {
-        path: "/home/product/:id",
-        element: <Product />,
-      },
       {
         path: "/home",
         element: <HomePage />,

@@ -1,7 +1,7 @@
-import { gql } from "@apollo/client";
+import { gql } from '../__generated__/gql';
 
-export const CATALOG_QUERY = gql`
-  {
+export const CATALOG_QUERY = gql(`
+  query GetCatalog {
     catalog {
       id
       products {
@@ -19,10 +19,10 @@ export const CATALOG_QUERY = gql`
       count
     }
   }
-`;
+`);
 
-export const CART_QUERY = gql`
-  {
+export const CART_QUERY = gql(`
+  query GetCart {
     cart {
       id
       products {
@@ -42,20 +42,4 @@ export const CART_QUERY = gql`
       count
     }
   }
-`;
-
-export const GET_PRODUCT = gql`
-  query GetProduct($id: ID!) {
-    product(productId: $id) {
-      id
-      name
-      description
-      price
-      image {
-        desktop
-        tablet
-        mobile
-      }
-    }
-  }
-`;
+`);

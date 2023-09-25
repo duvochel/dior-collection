@@ -1,4 +1,6 @@
+import React from "react";
 import classNames from "classnames";
+
 import arrowRight from "../icons/arrowRight.svg";
 import arrowLeft from "../icons/arrowLeft.svg";
 

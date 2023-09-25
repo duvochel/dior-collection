@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 import { useHover } from "usehooks-ts";
 
 import cartIcon from "../icons/shopping-cart.svg";

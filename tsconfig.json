@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "outDir": "./built",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": true,
+    "target": "es5",
+    "esModuleInterop": true
+  },
+  "files": ["globals.d.ts"],
+  "include": ["./src/**/*"],
+  "exclude": ["./built"]
+}

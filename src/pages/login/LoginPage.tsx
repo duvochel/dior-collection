@@ -1,18 +1,18 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import classNames from "classnames";
-import { useMutation, gql } from "@apollo/client";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import classNames from 'classnames';
+import { useMutation, gql } from '@apollo/client';
 
 import {
   AUTH_TOKEN,
   IMG_EIFFEL_DESKTOP,
   IMG_EIFFEL_MOBILE,
   IMG_EIFFEL_TABLET,
-} from "../../constants";
-import diorLogo from "../../icons/diorLogo.svg";
+} from '../../constants';
+import diorLogo from '../../icons/diorLogo.svg';
 
-import "./loginPage.scss";
-import { useDevice } from "../../hooks/useDevice";
+import './loginPage.scss';
+import { useDevice } from '../../hooks/useDevice';
 
 const LOGIN_MUTATION = gql`
   mutation LoginMutation($email: String!, $password: String!) {
@@ -25,16 +25,16 @@ const LOGIN_MUTATION = gql`
 export default function LoginPage() {
   const device = useDevice();
   const imgUrl =
-    device === "desktop"
+    device === 'desktop'
       ? IMG_EIFFEL_DESKTOP
-      : device === "tablet"
+      : device === 'tablet'
       ? IMG_EIFFEL_TABLET
       : IMG_EIFFEL_MOBILE;
   const navigate = useNavigate();
 
   const [formState, setFormState] = useState({
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   });
 
   const [login, { error }] = useMutation(LOGIN_MUTATION, {
@@ -44,10 +44,14 @@ export default function LoginPage() {
     },
     onCompleted: ({ login }) => {
       localStorage.setItem(AUTH_TOKEN, login.token);
-      navigate("/home");
+      navigate('/home');
     },
-    onError: () => console.log("Not logged in"),
+    onError: () => console.log('Not logged in'),
   });
+
+  function handleClick() {
+    login();
+  }
 
   return (
     <div className="container-flex-v login-page">
@@ -61,15 +65,15 @@ export default function LoginPage() {
       </div>
       <div className="slide-bottom">
         <div
-          className={classNames("container-flex-v", "input-text", {
-            "error-field": Boolean(error),
+          className={classNames('container-flex-v', 'input-text', {
+            'error-field': Boolean(error),
           })}
         >
           {error && <span>{error.message}</span>}
           <div className="container-flex-v">
             <label htmlFor="email">LOGIN</label>
             <input
-              name="email"
+              id="email"
               value={formState.email}
               onChange={(e) =>
                 setFormState({
@@ -83,7 +87,7 @@ export default function LoginPage() {
           <div className="container-flex-v">
             <label htmlFor="pwd">PASSWORD</label>
             <input
-              name="pwd"
+              id="pwd"
               value={formState.password}
               onChange={(e) =>
                 setFormState({
@@ -95,7 +99,7 @@ export default function LoginPage() {
             />
           </div>
         </div>
-        <button onClick={login} className="btn-login">
+        <button onClick={handleClick} className="btn-login">
           LOGIN
         </button>
       </div>

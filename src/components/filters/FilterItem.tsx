@@ -1,10 +1,20 @@
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import classNames from "classnames";
 import { useOnClickOutside } from "usehooks-ts";
 
 import "./filterItem.scss";
 
-export default function FilterItem({ item, isTitle }) {
+export type Filter = {
+  label: string;
+  iconUrl?: string;
+}
+
+interface FilterItemProps {
+  item: Filter,
+  isTitle?: boolean,
+}
+
+export default function FilterItem({ item, isTitle }: FilterItemProps) {
   const [isSelected, setIsSelected] = useState(false);
 
   const labelRef = useRef(null);
