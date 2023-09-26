@@ -4,8 +4,9 @@
     "module": "commonjs",
     "lib": ["esnext"],
     "strict": true,
+    "skipLibCheck": true,
     "rootDir": ".",
-    "outDir": "dist",
+    "outDir": "./dist",
     "sourceMap": true,
     "esModuleInterop": true
   },

@@ -1,14 +1,11 @@
-FROM node:18-alpine
+FROM node:current-bookworm
 
 WORKDIR /app
 
-COPY src/ /app/src
-COPY yarn.lock /app/
-COPY package.json /app/
+COPY dist ./dist
 
-ENV NODE_ENV=production
-RUN yarn
+COPY package.json yarn.lock ./
+RUN yarn --production --frozen-lockfile
 
+CMD [ "yarn", "start" ]
 EXPOSE 4000
-
-CMD ["yarn", "start"]
