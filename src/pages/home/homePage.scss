@@ -1,6 +1,6 @@
-@import "../../styles/common.scss";
-@import "../../styles/mixins.scss";
-@import "../../styles/variables.scss";
+@import '@/styles/common.scss';
+@import '@/styles/mixins.scss';
+@import '@/styles/variables.scss';
 
 .home-page-container {
   @include flex-v;
@@ -16,6 +16,7 @@
 
     @media (min-width: $tablet) {
       gap: 4.06rem;
+      margin-bottom: 11.9rem;
     }
 
     @media (min-width: $desktop) {

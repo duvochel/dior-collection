@@ -1,10 +1,10 @@
 import React from "react";
 import classNames from "classnames";
 
-import arrowRight from "../icons/arrowRight.svg";
-import arrowLeft from "../icons/arrowLeft.svg";
+import arrowRight from "@/icons/arrowRight.svg";
+import arrowLeft from "@/icons/arrowLeft.svg";
 
-import "../styles/arrowButton.scss";
+import "./arrowButton.scss";
 
 export default function ArrowButton({ imageUrl, direction, handleClick }) {
   const buttonStyle = classNames(`arrow-${direction}`);

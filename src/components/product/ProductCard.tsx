@@ -1,20 +1,20 @@
-import React, { useEffect, useRef, useState } from "react";
-import { useHover, useMediaQuery } from "usehooks-ts";
+import React, { useEffect, useRef, useState } from 'react';
+import { useHover, useMediaQuery } from 'usehooks-ts';
 
-import { DESCRIPTION_BETA } from "../constants";
-import "../styles/productCard.scss";
+import { DESCRIPTION_BETA } from '@/constants';
+import './productCard.scss';
 
 export default function ProductCard({ product, position }) {
-  const isDesktop = useMediaQuery("(min-width: 835px)")
-  const isTablet = useMediaQuery("(min-width: 391px) and (max-width: 834px)")
+  const isDesktop = useMediaQuery('(min-width: 835px)');
+  const isTablet = useMediaQuery('(min-width: 391px) and (max-width: 834px)');
 
   const hoverRef = useRef(null);
   const isHover = useHover(hoverRef);
-  const isCurrent = position === "current";
+  const isCurrent = position === 'current';
 
   const [isAnimate, setIsAnimate] = useState(true);
 
-  const slideLeft = isCurrent && isAnimate ? "slide-left" : "";
+  const slideLeft = isCurrent && isAnimate ? 'slide-left' : '';
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -32,7 +32,7 @@ export default function ProductCard({ product, position }) {
   } else {
     imageUrl = product.image.mobile;
   }
-  
+
   return (
     <div className={`card-product ${slideLeft} ${position}`} ref={hoverRef}>
       <div className={`card-product-image ${position} transform-hover`}>

@@ -6,9 +6,13 @@
     "allowJs": true,
     "target": "es5",
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "@/*": ["./src/*"],
+      "styles/*": ["./src/styles/*"]
+    }
   },
   "files": ["globals.d.ts"],
   "include": ["./src/**/*.ts", "./src/**/*.tsx"],
-  "exclude": ["./built", "./test/*", "node_modules"],
+  "exclude": ["./built", "./test/*", "node_modules"]
 }

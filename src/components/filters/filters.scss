@@ -1,5 +1,5 @@
-@import "../../styles/common.scss";
-@import "../../styles/variables.scss";
+@import '@/styles/common';
+@import '@/styles/variables.scss';
 
 .filters-container {
   display: flex;
@@ -34,9 +34,9 @@
         // TODO : 9rem on Figma
         margin-right: 6rem;
       }
-  }
+    }
 
-    @media (min-width: $tablet ) {
+    @media (min-width: $tablet) {
       margin: 0;
     }
 

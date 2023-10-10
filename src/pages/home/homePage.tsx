@@ -1,9 +1,9 @@
 import React from "react";
 
-import AddToCartButton from "../../components/AddToCartButton";
-import ProductList from "../../components/ProductList";
-import Filters from "../../components/filters/Filters";
-import { useDevice } from "../../hooks/useDevice";
+import AddToCartButton from "@/components/buttons/AddToCartButton";
+import ProductList from "@/components/product/ProductList";
+import Filters from "@/components/filters/Filters";
+import { useDevice } from "@/hooks/useDevice";
 
 import "./homePage.scss";
 

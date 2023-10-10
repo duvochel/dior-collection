@@ -1,9 +1,7 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
+import React from 'react';
+import { Outlet } from 'react-router-dom';
 
-import Header from "./Header";
-
-import "../styles/app.scss";
+import Header from '@/components/header/Header';
 
 export default function App() {
   return (

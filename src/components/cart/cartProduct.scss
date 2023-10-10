@@ -1,5 +1,5 @@
-@import "../../styles/mixins.scss";
-@import "../../styles/variables.scss";
+@import '@/styles/mixins.scss';
+@import '@/styles/variables.scss';
 
 .cart-product-list {
   display: flex;
@@ -73,7 +73,7 @@
     }
 
     &-info::after {
-      content: "";
+      content: '';
       position: absolute;
       right: 0;
       bottom: 0;

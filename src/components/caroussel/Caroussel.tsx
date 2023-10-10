@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import ProductCard from "../ProductCard";
-import ArrowButton from "../ArrowButton";
+import ProductCard from '@/components/product/ProductCard';
+import ArrowButton from '@/components/buttons/ArrowButton';
 
-import { useDevice } from "../../hooks/useDevice";
+import { useDevice } from '@/hooks/useDevice';
 
-import "./caroussel.scss";
+import './caroussel.scss';
 
 export default function Caroussel({ products }) {
   const device = useDevice();
-  const isDesktop = device === "desktop";
+  const isDesktop = device === 'desktop';
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -38,17 +38,17 @@ export default function Caroussel({ products }) {
 
   function getPosition(index) {
     if (currentIndex === index) {
-      return "current";
+      return 'current';
     } else if (currentIndex === index + 1) {
-      return "previous";
+      return 'previous';
     } else if (currentIndex === index - 1) {
-      return "next";
+      return 'next';
     } else if (currentIndex === index + 2) {
-      return "before";
+      return 'before';
     } else if (currentIndex === index - 2) {
-      return "after";
+      return 'after';
     }
-    return "out";
+    return 'out';
   }
   return (
     <>

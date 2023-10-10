@@ -2,13 +2,13 @@ import React from "react";
 import classNames from "classnames";
 import { useQuery } from "@apollo/client";
 
-import CartProduct from "./cart/CartProduct";
-import { CART_QUERY } from "../queries/query";
+import CartProduct from "@/components/cart/CartProduct";
+import { CART_QUERY } from "@/queries/query";
 
-import closeIcon from "../icons/closeIcon.svg";
-import cartIcon from "../icons/shopping-cart.svg";
+import closeIcon from "@/icons/closeIcon.svg";
+import cartIcon from "@/icons/shopping-cart.svg";
 
-import "../styles/sidePanel.scss";
+import "./sidePanel.scss";
 
 export default function SidePanel({ isVisible, handleClose }) {
   const { loading, data, error } = useQuery(CART_QUERY);

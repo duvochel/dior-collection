@@ -1,9 +1,9 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 
-import Caroussel from './caroussel/Caroussel';
+import Caroussel from '@/components/caroussel/Caroussel';
 
-import { CATALOG_QUERY } from '../queries/query';
+import { CATALOG_QUERY } from '@/queries/query';
 
 import './productList.scss';
 

@@ -3,16 +3,16 @@ import { useNavigate } from 'react-router-dom';
 import classNames from 'classnames';
 import { useMutation, gql } from '@apollo/client';
 
+import { useDevice } from '@/hooks/useDevice';
 import {
   AUTH_TOKEN,
   IMG_EIFFEL_DESKTOP,
   IMG_EIFFEL_MOBILE,
   IMG_EIFFEL_TABLET,
-} from '../../constants';
-import diorLogo from '../../icons/diorLogo.svg';
+} from '@/constants';
+import diorLogo from '@/icons/diorLogo.svg';
 
 import './loginPage.scss';
-import { useDevice } from '../../hooks/useDevice';
 
 const LOGIN_MUTATION = gql`
   mutation LoginMutation($email: String!, $password: String!) {
